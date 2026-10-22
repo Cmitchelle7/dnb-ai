@@ -1,4 +1,4 @@
-﻿"""Tests for Muraja'ah Revision Intelligence (#253)."""
+"""Tests for Muraja'ah Revision Intelligence (#253)."""
 
 from datetime import date, datetime, timedelta
 
@@ -63,7 +63,8 @@ def test_forgetting_curve_decays():
 def test_priority_never_reviewed_is_top():
     fresh = AyahProgress(surah=1, ayah=1)
     reviewed = AyahProgress(
-        surah=1, ayah=2,
+        surah=1,
+        ayah=2,
         last_reviewed=datetime.now(),
         next_review=date.today(),
     )
@@ -95,24 +96,20 @@ def test_build_session_balances_tiers():
 
 def test_build_session_respects_budget():
     ayahs = [AyahProgress(surah=2, ayah=i) for i in range(1, 11)]
-    session = MurajaahEngine.build_session(
-        ayahs, RevisionSessionRequest(max_minutes=5), seconds_per_ayah=60
-    )
+    session = MurajaahEngine.build_session(ayahs, RevisionSessionRequest(max_minutes=5), seconds_per_ayah=60)
     assert len(session.ayahs) <= 5
 
 
 def test_record_skipped_pushes_to_tomorrow():
     p = MurajaahEngine.record(
-        [], RevisionRecordRequest(surah=1, ayah=1, quality=RecallQuality.GOOD,
-                                  outcome=RevisionOutcome.SKIPPED)
+        [], RevisionRecordRequest(surah=1, ayah=1, quality=RecallQuality.GOOD, outcome=RevisionOutcome.SKIPPED)
     )
     assert p.next_review == date.today() + timedelta(days=1)
 
 
 def test_record_partial_downgrades():
     p = MurajaahEngine.record(
-        [], RevisionRecordRequest(surah=1, ayah=1, quality=RecallQuality.GOOD,
-                                  outcome=RevisionOutcome.PARTIAL)
+        [], RevisionRecordRequest(surah=1, ayah=1, quality=RecallQuality.GOOD, outcome=RevisionOutcome.PARTIAL)
     )
     assert p.repetitions == 0
 

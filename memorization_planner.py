@@ -1,4 +1,4 @@
-﻿"""Personalized Quran Memorization Planner System (#252)
+"""Personalized Quran Memorization Planner System (#252)
 
 Generates intelligent, customized Quran memorization schedules based on user's
 available time, current progress, memorization pace, and revision requirements.
@@ -93,7 +93,16 @@ class SurahInfo:
 # Comprehensive embedded dataset for all 114 Surahs with difficulty rating and Juz mapping
 _SURAH_DATA: dict[int, SurahInfo] = {
     1: SurahInfo(
-        1, "Al-Fatihah", "Ø§Ù„ÙØ§ØªØ­Ø©", 7, "meccan", DifficultyTier.EASY, 1.0, 1, 1, "The Opening - Essential foundational"
+        1,
+        "Al-Fatihah",
+        "Ø§Ù„ÙØ§ØªØ­Ø©",
+        7,
+        "meccan",
+        DifficultyTier.EASY,
+        1.0,
+        1,
+        1,
+        "The Opening - Essential foundational",
     ),
     2: SurahInfo(
         2,
@@ -168,7 +177,16 @@ _SURAH_DATA: dict[int, SurahInfo] = {
         "Extensive prophetic stories with shared phrasing",
     ),
     8: SurahInfo(
-        8, "Al-Anfal", "Ø§Ù„Ø£Ù†ÙØ§Ù„", 75, "medinan", DifficultyTier.MEDIUM, 10.0, 9, 10, "Badr and rules of engagement"
+        8,
+        "Al-Anfal",
+        "Ø§Ù„Ø£Ù†ÙØ§Ù„",
+        75,
+        "medinan",
+        DifficultyTier.MEDIUM,
+        10.0,
+        9,
+        10,
+        "Badr and rules of engagement",
     ),
     9: SurahInfo(
         9,
@@ -183,7 +201,16 @@ _SURAH_DATA: dict[int, SurahInfo] = {
         "Tabuk expedition, strict hypocrite distinctions",
     ),
     10: SurahInfo(
-        10, "Yunus", "ÙŠÙˆÙ†Ø³", 109, "meccan", DifficultyTier.MEDIUM, 13.0, 11, 11, "Prophetic warnings and divine signs"
+        10,
+        "Yunus",
+        "ÙŠÙˆÙ†Ø³",
+        109,
+        "meccan",
+        DifficultyTier.MEDIUM,
+        13.0,
+        11,
+        11,
+        "Prophetic warnings and divine signs",
     ),
     11: SurahInfo(
         11,
@@ -198,10 +225,28 @@ _SURAH_DATA: dict[int, SurahInfo] = {
         "Stories of the prophets, high mutashabihat with A'raf",
     ),
     12: SurahInfo(
-        12, "Yusuf", "ÙŠÙˆØ³Ù", 111, "meccan", DifficultyTier.MEDIUM, 14.5, 12, 13, "Cohesive narrative of Prophet Yusuf"
+        12,
+        "Yusuf",
+        "ÙŠÙˆØ³Ù",
+        111,
+        "meccan",
+        DifficultyTier.MEDIUM,
+        14.5,
+        12,
+        13,
+        "Cohesive narrative of Prophet Yusuf",
     ),
     13: SurahInfo(
-        13, "Ar-Ra'd", "Ø§Ù„Ø±Ø¹Ø¯", 43, "medinan", DifficultyTier.MEDIUM, 6.5, 13, 13, "Cosmic signs and revelation truth"
+        13,
+        "Ar-Ra'd",
+        "Ø§Ù„Ø±Ø¹Ø¯",
+        43,
+        "medinan",
+        DifficultyTier.MEDIUM,
+        6.5,
+        13,
+        13,
+        "Cosmic signs and revelation truth",
     ),
     14: SurahInfo(
         14,
@@ -336,7 +381,16 @@ _SURAH_DATA: dict[int, SurahInfo] = {
         "Verse of Light, social modesty, legal rulings",
     ),
     25: SurahInfo(
-        25, "Al-Furqan", "Ø§Ù„ÙØ±Ù‚Ø§Ù†", 77, "meccan", DifficultyTier.EASY, 7.5, 18, 19, "Attributes of 'Ibad ar-Rahman"
+        25,
+        "Al-Furqan",
+        "Ø§Ù„ÙØ±Ù‚Ø§Ù†",
+        77,
+        "meccan",
+        DifficultyTier.EASY,
+        7.5,
+        18,
+        19,
+        "Attributes of 'Ibad ar-Rahman",
     ),
     26: SurahInfo(
         26,
@@ -426,10 +480,28 @@ _SURAH_DATA: dict[int, SurahInfo] = {
         "Battle of the Trench, mothers of the believers",
     ),
     34: SurahInfo(
-        34, "Saba", "Ø³Ø¨Ø£", 54, "meccan", DifficultyTier.MEDIUM, 6.5, 22, 22, "Kingdom of Sheba and resurrection proofs"
+        34,
+        "Saba",
+        "Ø³Ø¨Ø£",
+        54,
+        "meccan",
+        DifficultyTier.MEDIUM,
+        6.5,
+        22,
+        22,
+        "Kingdom of Sheba and resurrection proofs",
     ),
     35: SurahInfo(
-        35, "Fatir", "ÙØ§Ø·Ø±", 45, "meccan", DifficultyTier.MEDIUM, 6.0, 22, 22, "The Originator and ranks of the angels"
+        35,
+        "Fatir",
+        "ÙØ§Ø·Ø±",
+        45,
+        "meccan",
+        DifficultyTier.MEDIUM,
+        6.0,
+        22,
+        22,
+        "The Originator and ranks of the angels",
     ),
     36: SurahInfo(
         36,
@@ -531,10 +603,28 @@ _SURAH_DATA: dict[int, SurahInfo] = {
         "Night of decree and the visible smoke",
     ),
     45: SurahInfo(
-        45, "Al-Jathiyah", "Ø§Ù„Ø¬Ø§Ø«ÙŠØ©", 37, "meccan", DifficultyTier.EASY, 4.0, 25, 26, "Kneeling nations before judgment"
+        45,
+        "Al-Jathiyah",
+        "Ø§Ù„Ø¬Ø§Ø«ÙŠØ©",
+        37,
+        "meccan",
+        DifficultyTier.EASY,
+        4.0,
+        25,
+        26,
+        "Kneeling nations before judgment",
     ),
     46: SurahInfo(
-        46, "Al-Ahqaf", "Ø§Ù„Ø£Ø­Ù‚Ø§Ù", 35, "meccan", DifficultyTier.MEDIUM, 4.5, 26, 26, "The sand dunes and filial piety"
+        46,
+        "Al-Ahqaf",
+        "Ø§Ù„Ø£Ø­Ù‚Ø§Ù",
+        35,
+        "meccan",
+        DifficultyTier.MEDIUM,
+        4.5,
+        26,
+        26,
+        "The sand dunes and filial piety",
     ),
     47: SurahInfo(
         47,
@@ -597,7 +687,16 @@ _SURAH_DATA: dict[int, SurahInfo] = {
         "Scattering winds, Ibrahim's guests",
     ),
     52: SurahInfo(
-        52, "At-Tur", "Ø§Ù„Ø·ÙˆØ±", 49, "meccan", DifficultyTier.EASY, 2.5, 27, 27, "The Mount and vivid delight of Jannah"
+        52,
+        "At-Tur",
+        "Ø§Ù„Ø·ÙˆØ±",
+        49,
+        "meccan",
+        DifficultyTier.EASY,
+        2.5,
+        27,
+        27,
+        "The Mount and vivid delight of Jannah",
     ),
     53: SurahInfo(
         53,
@@ -723,7 +822,16 @@ _SURAH_DATA: dict[int, SurahInfo] = {
         "Hypocrite psychology and heedlessness warning",
     ),
     64: SurahInfo(
-        64, "At-Taghabun", "Ø§Ù„ØªØºØ§Ø¨Ù†", 18, "medinan", DifficultyTier.EASY, 2.0, 28, 28, "Day of Mutual Loss and Gain"
+        64,
+        "At-Taghabun",
+        "Ø§Ù„ØªØºØ§Ø¨Ù†",
+        18,
+        "medinan",
+        DifficultyTier.EASY,
+        2.0,
+        28,
+        28,
+        "Day of Mutual Loss and Gain",
     ),
     65: SurahInfo(
         65,
@@ -882,7 +990,16 @@ _SURAH_DATA: dict[int, SurahInfo] = {
         "Winds sent forth with recurring woe to deniers",
     ),
     78: SurahInfo(
-        78, "An-Naba", "Ø§Ù„Ù†Ø¨Ø£", 40, "meccan", DifficultyTier.EASY, 1.5, 30, 30, "The Great Tidings, opening of Juz Amma"
+        78,
+        "An-Naba",
+        "Ø§Ù„Ù†Ø¨Ø£",
+        40,
+        "meccan",
+        DifficultyTier.EASY,
+        1.5,
+        30,
+        30,
+        "The Great Tidings, opening of Juz Amma",
     ),
     79: SurahInfo(
         79,
@@ -909,7 +1026,16 @@ _SURAH_DATA: dict[int, SurahInfo] = {
         "He frowned, priority of sincere spiritual seeker",
     ),
     81: SurahInfo(
-        81, "At-Takwir", "Ø§Ù„ØªÙƒÙˆÙŠØ±", 29, "meccan", DifficultyTier.EASY, 1.0, 30, 30, "The Enfolding of the sun and stars"
+        81,
+        "At-Takwir",
+        "Ø§Ù„ØªÙƒÙˆÙŠØ±",
+        29,
+        "meccan",
+        DifficultyTier.EASY,
+        1.0,
+        30,
+        30,
+        "The Enfolding of the sun and stars",
     ),
     82: SurahInfo(
         82,
@@ -960,7 +1086,16 @@ _SURAH_DATA: dict[int, SurahInfo] = {
         "Constellations and people of the ditch (Ashab al-Ukhdud)",
     ),
     86: SurahInfo(
-        86, "At-Tariq", "Ø§Ù„Ø·Ø§Ø±Ù‚", 17, "meccan", DifficultyTier.EASY, 1.0, 30, 30, "The Night-Comer and human origin"
+        86,
+        "At-Tariq",
+        "Ø§Ù„Ø·Ø§Ø±Ù‚",
+        17,
+        "meccan",
+        DifficultyTier.EASY,
+        1.0,
+        30,
+        30,
+        "The Night-Comer and human origin",
     ),
     87: SurahInfo(
         87,
@@ -1059,7 +1194,16 @@ _SURAH_DATA: dict[int, SurahInfo] = {
         "Expansion of the chest and relief with hardship",
     ),
     95: SurahInfo(
-        95, "At-Tin", "Ø§Ù„ØªÙŠÙ†", 8, "meccan", DifficultyTier.EASY, 0.5, 30, 30, "The Fig, Olive and creation in best mold"
+        95,
+        "At-Tin",
+        "Ø§Ù„ØªÙŠÙ†",
+        8,
+        "meccan",
+        DifficultyTier.EASY,
+        0.5,
+        30,
+        30,
+        "The Fig, Olive and creation in best mold",
     ),
     96: SurahInfo(
         96,
@@ -1194,7 +1338,16 @@ _SURAH_DATA: dict[int, SurahInfo] = {
         "Security of Quraysh journeys and worship of Lord of Ka'bah",
     ),
     107: SurahInfo(
-        107, "Al-Ma'un", "Ø§Ù„Ù…Ø§Ø¹ÙˆÙ†", 7, "meccan", DifficultyTier.EASY, 0.5, 30, 30, "Small kindnesses and true piety"
+        107,
+        "Al-Ma'un",
+        "Ø§Ù„Ù…Ø§Ø¹ÙˆÙ†",
+        7,
+        "meccan",
+        DifficultyTier.EASY,
+        0.5,
+        30,
+        30,
+        "Small kindnesses and true piety",
     ),
     108: SurahInfo(
         108,
@@ -2027,9 +2180,7 @@ class RevisionSessionRequest(BaseModel):
 class RevisionSessionResponse(BaseModel):
     ayahs: list[AyahProgress]
     total_estimated_minutes: int
-    breakdown: dict[str, int] = Field(
-        description="Counts per tier: critical / weak / maintenance"
-    )
+    breakdown: dict[str, int] = Field(description="Counts per tier: critical / weak / maintenance")
 
 
 class RevisionReminderResponse(BaseModel):
@@ -2196,8 +2347,11 @@ class MurajaahEngine:
         total = len(prior)
         if not total:
             return RevisionStatsResponse(
-                total_ayahs=0, due_today=0, avg_ease=0.0,
-                total_lapses=0, overall_error_rate=0.0,
+                total_ayahs=0,
+                due_today=0,
+                avg_ease=0.0,
+                total_lapses=0,
+                overall_error_rate=0.0,
             )
         due = sum(1 for p in prior if p.is_due)
         avg_ease = sum(p.ease for p in prior) / total
@@ -2228,4 +2382,3 @@ async def revision_reminder() -> RevisionReminderResponse:
 async def revision_stats() -> RevisionStatsResponse:
     """Return aggregate retention statistics."""
     return MurajaahEngine.stats([])
-
